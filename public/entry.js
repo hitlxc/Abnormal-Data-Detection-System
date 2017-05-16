@@ -6,32 +6,20 @@ import Navigation from './component/navigation'
 import Log from './component/log'
 import About from './component/about'
 import Home from './component/home'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>异常URL检测系统</h1>
         <Navigation />
-        {this.props.children}
+        <div style={{}}>{this.props.children}</div>
       </div>
     );
   }
 }
-
-/*export default class Root extends Component {
-  render() {
-    return (
-      <Router history={createBrowserHistory()}>
-        <Route path='/' component={App}>
-          <IndexRoute component={Home} />
-          <Route path='about' component={About} />
-          <Route path='contact' component={Contact} />
-        </Route>
-      </Router>
-    );
-  }
-}*/
 
 ReactDOM.render((
   <Router history={createBrowserHistory()}>
