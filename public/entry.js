@@ -8,6 +8,7 @@ import About from './component/about'
 import Home from './component/home'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+
 injectTapEventPlugin();
 
 class App extends Component {

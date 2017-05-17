@@ -5,6 +5,10 @@ import echarts from 'echarts'
 import MenuItem from 'material-ui/MenuItem';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import DataTables from 'material-ui-datatables';
+
+import LogTable from './LogTable'
+
 //var echarts = require('echarts');
 let timeData = [
     '2009/6/12 2:00', '2009/6/12 3:00', '2009/6/12 4:00', '2009/6/12 5:00', '2009/6/12 6:00', '2009/6/12 7:00', '2009/6/12 8:00', '2009/6/12 9:00', '2009/6/12 10:00', '2009/6/12 11:00', '2009/6/12 12:00', '2009/6/12 13:00', '2009/6/12 14:00', '2009/6/12 15:00', '2009/6/12 16:00', '2009/6/12 17:00', '2009/6/12 18:00', '2009/6/12 19:00', '2009/6/12 20:00', '2009/6/12 21:00', '2009/6/12 22:00', '2009/6/12 23:00',
@@ -215,6 +219,8 @@ export default class Log extends Component {
 		        }
 		    ]
 	})
+
+
   }
   render() {
     return  <div>
@@ -234,7 +240,8 @@ export default class Log extends Component {
 	    	<div id="chart2-title" style={{paddingTop:80,borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>请求类型统计</div>
 	    	<div id="chart2" style={{width: 1200,height:800}}></div>
 	    	<div id="chart3-title" style={{paddingTop:80,borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>服务器日志</div>
-	    	<div id="main" style={{width: 1200,height:800}}></div>
+	    	
+	    	<LogTable/>
 	    </div>
     </div>;
   }
