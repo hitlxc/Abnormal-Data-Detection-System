@@ -6,8 +6,9 @@ import Navigation from './component/navigation'
 import Log from './component/log'
 import About from './component/about'
 import Home from './component/home'
+import check from './component/check'
+import blacklist from './component/blacklist'
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
 
 injectTapEventPlugin();
 
@@ -28,6 +29,8 @@ ReactDOM.render((
           <IndexRoute component={Home} />
           <Route path='about' component={About} />
           <Route path='log' component={Log} />
+          <Route path='check' component={check} />
+          <Route path='blacklist' component={blacklist} />
         </Route>
       </Router>
 ), document.body)

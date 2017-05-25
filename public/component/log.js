@@ -181,9 +181,47 @@ export default class Log extends Component {
         }
     ]
 	});
+
+    var myChart2 = echarts.init(document.getElementById('chart2'));
+    myChart2.setOption({
+            title : {
+                text: '当月不同类型流量占比',
+                subtext: '',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['正常流量','攻击性流量','可疑流量']
+            },
+            series : [
+                {
+                    name: '流量占比',
+                    type: 'pie',
+                    radius : '75%',
+                    center: ['50%', '50%'],
+                    data:[
+                        {value:3350, name:'正常流量'},
+                        {value:600, name:'攻击性流量'},
+                        {value:850, name:'可疑流量'},
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+    })
 	
-	var myChart2 = echarts.init(document.getElementById('chart2'));
-	myChart2.setOption({
+	var myChart3 = echarts.init(document.getElementById('chart3'));
+	myChart3.setOption({
 		    title : {
 		        text: '请求类型',
 		        subtext: '',
@@ -229,17 +267,22 @@ export default class Log extends Component {
         		<MuiThemeProvider  muiTheme={getMuiTheme()}>
         			<div>
 		    			<MenuItem  href='#chart1-title'>流量时序图</MenuItem>
-		          		<MenuItem  href='#chart2-title'>请求类型统计</MenuItem>
-		          		<MenuItem  href='#chart3-title'>服务器日志</MenuItem>
+                        <MenuItem  href='#chart2-title'>当月异常流量占比</MenuItem>
+		          		<MenuItem  href='#chart3-title'>请求类型统计</MenuItem>
+		          		<MenuItem  href='#chart4-title'>服务器日志</MenuItem>
 		          	</div>
 	          	</MuiThemeProvider>
  			</div>
       	<div style={{marginLeft:200}}>
-      		<div id="chart1-title" style={{paddingTop:80,borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>流量时序图</div>
-	    	<div id="chart1" style={{width: 1200,height:800}}></div>
-	    	<div id="chart2-title" style={{paddingTop:80,borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>请求类型统计</div>
-	    	<div id="chart2" style={{width: 1200,height:800}}></div>
-	    	<div id="chart3-title" style={{paddingTop:80,borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>服务器日志</div>
+
+      		<div id="chart1-title" style={{padding:'80px 0 10px 0',borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>流量时序图</div>
+	    	<div id="chart1" style={{width: 800,height:600}}></div>
+            <div id="chart2-title" style={{padding:'80px 0 10px 0',borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>当月不同类型流量占比</div>
+            <div id="chart2" style={{width: 800,height:400}}></div>
+            
+	    	<div id="chart3-title" style={{padding:'80px 0 10px 0',borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>请求类型统计</div>
+	    	<div id="chart3" style={{width: 800,height:400}}></div>
+	    	<div id="chart3-title" style={{padding:'80px 0 10px 0',borderBottom:'2px solid gray' ,fontSize: 32, width: '90%', marginBottom: 20}}>服务器日志</div>
 	    	
 	    	<LogTable/>
 	    </div>

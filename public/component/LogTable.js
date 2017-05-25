@@ -10,7 +10,7 @@ import {Card, CardHeader} from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 import PersonAdd from 'material-ui/svg-icons/social/person-add';
 import InfoOutline from 'material-ui/svg-icons/action/info-outline';
-
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import DataTables from 'material-ui-datatables';
 
 import FakeAPI from './FakeAPI';
@@ -22,6 +22,7 @@ const styles = {
     WebkitFontSmoothing: 'antialiased',
   },
   container: {
+    width:1000
   },
   component: {
     textAlign: 'center',
@@ -44,22 +45,31 @@ const TABLE_COLUMNS_SORT_STYLE = [
     key: 'id',
     label: 'id',
     sortable: true,
-    
+    width: 50,
   }, {
     key: 'url_path',
     label: 'url路径',
     sortable: false,
+    width: 50,
   }, {
+
     key: 'http_method',
     label: '请求类型',
+    width: 50,
   }, {
     key: 'http_headers',
     label: '请求头',
     style: {
-      width: 250,
-      overflow: 'auto'
+      lineHeight:'25px',
+      width: 500,
+      whiteSpace: 'normal',
+      textOverflow: 'clip',
+      height:100,
+      wordWrap: 'break-word',
+      wordBreak: 'normal',
     }
   }, {
+    width: 50,
     key: 'http_time',
     label: '时间',
   }, 
@@ -194,6 +204,8 @@ class LogTable extends Component {
                 count={this.state.total}
                 rowSize={this.state.rowSize}
                 rowSizeList={[5, 10, 15]}
+                tableRowColumnStyle={{height:100}}
+                tableRowStyle={{height:100}}
               />
             </Card>
           </div>

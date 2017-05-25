@@ -24,9 +24,7 @@ import $ from 'jquery';
 const Navigation = React.createClass({
   getInitialState: function() {
     return {
-      
       open:false,
-      
     };
   },
   handleToggle: function(){
@@ -43,7 +41,7 @@ const Navigation = React.createClass({
       <MuiThemeProvider  muiTheme={getMuiTheme()}>
         <div >
           <AppBar
-            style={{width:'100%',boxShadow:'none',position: 'fixed' , top: 0}}
+            style={{width:'100%',boxShadow:'none',position: 'fixed' , top: 0 ,backgroundColor: '#000'}}
             onLeftIconButtonTouchTap={this.handleToggle}
             title="异常URL检测系统"
           />
@@ -58,7 +56,7 @@ const Navigation = React.createClass({
             style={{
               height:'64px',
               color:'white',
-              backgroundColor: 'rgb(0, 188, 212)',
+              backgroundColor: '#000',
               lineHeight: '64px',
               fontWeight: '300',
               fontSize:'24px',
@@ -68,6 +66,8 @@ const Navigation = React.createClass({
           </Link>
           <Link style={{  textDecoration: 'none'}} to='/about'><MenuItem onTouchTap={this.handleClose} >关于</MenuItem></Link>
           <Link style={{  textDecoration: 'none'}} to='/log'><MenuItem onTouchTap={this.handleClose} >服务器日志</MenuItem></Link>
+          <Link style={{  textDecoration: 'none'}} to='/check'><MenuItem onTouchTap={this.handleClose} >异常URL在线检测</MenuItem></Link>
+          <Link style={{  textDecoration: 'none'}} to='/blacklist'><MenuItem onTouchTap={this.handleClose} >黑名单</MenuItem></Link>
 
           
           

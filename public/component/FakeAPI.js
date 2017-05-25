@@ -6,7 +6,7 @@ fakeDB.defaults({data: [
     id: '1',
     url_path: '/323',
     http_method: 'GET',
-    http_headers: 'Accept-Ranges:bytes Cache-Control:public, max-age=0 Connection:keep-alive Date:Wed, 17 May 2017 12:56:03 GMT ETag:W/"29-15c0ae6f8ef" Last-Modified:Mon, 15 May 2017 06:58:48 GMT X-Powered-By:Express',
+    http_headers: 'Accept-Ranges:bytes \n Cache-Control:public, max-age=0 \n Connection:keep-alive \n Date:Wed, 17 May 2017 12:56:03 GMT ETag:W/"29-15c0ae6f8ef" Last-Modified:Mon, 15 May 2017 06:58:48 GMT X-Powered-By:Express',
     http_time: '2017-03-02',
   }, {
     id: '2',
